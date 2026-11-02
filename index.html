@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="校园失物招领：发布、查找失物，让遗失的物品回到主人身边。">
+<title>寻物小站 · 校园失物招领</title>
+<style>:root{--ink:#203c35;--green:#245b49;--muted:#68796f;--line:#dce2da}*{box-sizing:border-box}body{margin:0;background:#f7f8f2;color:var(--ink);font:15px/1.65 system-ui,"Microsoft YaHei",sans-serif}button,input{font:inherit}button{cursor:pointer;border:0}a{color:inherit}input:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #c49445;outline-offset:2px}[hidden]{display:none!important}.topbar,main,footer{max-width:1168px;margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:20px;font-weight:700}.logo{background:var(--green);color:white;border-radius:9px;padding:2px 10px}.brand-sub,.top-note,.sort-note,.meta,.field-note,.local-note,.result-count,footer{color:var(--muted);font-size:12px}.brand-sub{font-size:10px;margin-left:10px}.hero{padding:35px 20px;display:grid;grid-template-columns:1fr 1fr;align-items:center}.eyebrow{font-size:12px;color:var(--green);letter-spacing:2px;margin:0 0 10px}h1{font-size:43px;line-height:1.3;margin:10px 0}h2{font-size:23px;margin:0}h3{margin:0;font-size:17px}.intro{color:var(--muted);font-size:14px}.hero-link{font-size:13px}.hero-art{text-align:center;background:#e6efdf;border-radius:45%;padding:35px}.orbit,.spark{display:none}.tag{font-size:12px;letter-spacing:3px}.art-card{margin:18px auto;background:white;max-width:230px;padding:25px;border-radius:12px;transform:rotate(-5deg);display:flex;flex-direction:column}.pin{font-size:35px;color:#ad8744}.art-card b{font-size:22px}.art-card>span:last-child{font-size:12px;color:var(--muted)}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:30px;align-items:start}.list-panel{padding:24px 0;min-width:0}.section-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.count,.status{background:#e8f0df;color:#537041;font-size:12px;padding:3px 8px;border-radius:6px}.search-wrap{display:flex;gap:12px;align-items:center;background:white;border:1px solid var(--line);border-radius:8px;padding:0 12px}.search-wrap>span{font-size:25px}.search-wrap input{flex:1;min-width:0;border:0}.search-wrap button{background:none;color:var(--green)}.items{display:grid;gap:14px}.item{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;padding:20px;background:white;border:1px solid var(--line);border-radius:12px}.item h3,.meta,dd{overflow-wrap:anywhere}.meta{margin:4px 0}.thumb{width:64px;height:64px;object-fit:cover;background:#edf2e6;border-radius:9px}.placeholder{display:grid;place-items:center;font-size:28px;color:#7e997b}.item .text-button{align-self:end;font-size:12px}.empty{text-align:center;border:1px dashed #c8d5c2;border-radius:10px;padding:60px 15px}.empty-icon{font-size:34px}.empty p{font-size:13px;color:var(--muted)}.publish-panel{background:white;border:1px solid var(--line);border-top:3px solid var(--green);border-radius:12px;padding:26px}.form-intro{font-size:12px;color:var(--muted);margin-bottom:20px}label{display:block;font-size:12px;font-weight:600;margin:15px 0 7px}input{width:100%;padding:11px;border:1px solid var(--line);border-radius:7px;background:#fcfdf9;color:var(--ink);font-size:13px}.required{color:#b56d3d}.optional{font-size:10px;color:var(--muted)}input[type=file]{font-size:11px;padding:8px}.field-note,.local-note{font-size:10px;margin:7px 0}.primary{width:100%;padding:13px;display:flex;justify-content:space-between;background:var(--green);color:white;border-radius:8px;margin-top:20px}.primary:hover{background:#184535}button:disabled{opacity:.6;cursor:wait}.local-note{text-align:center}.text-button{background:none;color:var(--green);padding:5px 0;text-decoration:underline;text-underline-offset:4px}#image-preview{width:100%;height:140px;object-fit:contain;margin-top:10px}.notice{display:flex;align-items:center;gap:20px;border-block:1px solid var(--line);padding:25px 20px;margin:30px 0}.notice>span{font-size:28px;color:#a88346}.notice h3{font-size:14px}.notice p{margin:4px 0;font-size:12px;color:var(--muted)}footer{display:flex;justify-content:space-between;padding:0 0 30px}.warning{padding:12px;background:#fff2db;border:1px solid #dfbb79;color:#77521d;border-radius:8px}dialog{width:min(540px,calc(100% - 32px));max-height:85vh;overflow:auto;border:1px solid var(--line);border-radius:16px;padding:26px;color:var(--ink)}dialog::backdrop{background:#132b2470}.dialog-head{display:flex;justify-content:space-between;align-items:center}.close{border-radius:50%;width:32px;height:32px;font-size:23px;color:var(--green)}dialog h2{margin:12px 0;overflow-wrap:anywhere}#detail-image{width:100%;max-height:240px;object-fit:contain;margin-top:15px}dl{display:grid;grid-template-columns:80px minmax(0,1fr);gap:14px;font-size:13px}dt{color:var(--muted)}dd{margin:0;white-space:pre-wrap}#toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);max-width:90vw;background:var(--ink);color:white;padding:12px 23px;border-radius:10px;z-index:5}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(max-width:1240px){.topbar,main,footer{margin-inline:25px}}@media(max-width:800px){.workspace{grid-template-columns:1fr}.brand-sub{display:none}h1{font-size:36px}}@media(max-width:520px){.hero{grid-template-columns:1fr;padding:25px 0}.hero-art{display:none}.top-note{font-size:10px}.item{grid-template-columns:46px minmax(0,1fr);padding:15px;gap:12px}.thumb{width:46px;height:46px}.item .text-button{grid-column:2;justify-self:start}.publish-panel{padding:22px}.notice{padding-inline:0}footer{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="logo" aria-hidden="true">寻</span>寻物小站<span class="brand-sub">CAMPUS LOST & FOUND</span></a><span class="top-note">校园里的温暖连接</span></header>
+<main>
+<section class="hero"><div><p class="eyebrow">让每一次遗失，都有回音</p><h1>你的失物，<br>也许就在这里。</h1><p class="intro">从教室到操场，从图书馆到食堂。<br>留下一条线索，让物品找到回家的路。</p><a class="hero-link" href="#publish">发布一条寻物信息 <span aria-hidden="true">↗</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit"></div><div class="tag">LOST <span>→</span> FOUND</div><div class="art-card"><span class="pin">⌖</span><b>在校园，相遇。</b><span>让线索连接你我</span></div><span class="spark">✦</span></div></section>
+<div id="storage-warning" class="warning" role="alert" hidden></div>
+<div class="workspace"><section class="list-panel" aria-labelledby="list-title"><div class="section-head"><div><p class="eyebrow">线索广场</p><h2 id="list-title">失物信息 <span id="total-count" class="count">0</span></h2></div><span class="sort-note">最新发布优先 ↓</span></div><div class="search-wrap"><label class="sr-only" for="search">搜索物品名称或丢失地点</label><span aria-hidden="true">⌕</span><input id="search" type="search" maxlength="100" placeholder="搜索物品名称或丢失地点…"><button id="clear-search" type="button" hidden>清空</button></div><p id="result-count" class="result-count" aria-live="polite"></p><div id="items" class="items"></div></section>
+<aside id="publish" class="publish-panel"><p class="eyebrow">留下线索</p><h2>发布失物</h2><p class="form-intro">认真填写信息，增加找回的机会。</p><form id="lost-form" novalidate><label for="title">物品名称 <span class="required">*</span></label><input id="title" name="title" required maxlength="80" placeholder="例如：蓝色校园卡套"><label for="location">丢失地点 <span class="required">*</span></label><input id="location" name="location" required maxlength="100" placeholder="例如：图书馆三楼自习室"><label for="time">丢失时间 <span class="optional">选填</span></label><input id="time" name="time" type="datetime-local"><label for="contact">联系方式 <span class="required">*</span></label><input id="contact" name="contact" required maxlength="80" placeholder="手机号 / QQ / 微信号"><p class="field-note">列表仅展示脱敏信息，详情中可点击查看。</p><label for="image">物品照片 <span class="optional">选填 · ≤500KB</span></label><input id="image" name="image" type="file" accept="image/png,image/jpeg,image/gif,image/webp"><p class="field-note">支持 PNG、JPG、GIF、WebP。</p><div id="image-preview-wrap" hidden><img id="image-preview" alt="待发布的物品照片预览"><button id="remove-image" type="button" class="text-button">移除照片</button></div><button id="submit" type="submit" class="primary">发布寻物信息 <span aria-hidden="true">＋</span></button><p class="local-note">信息保存在当前浏览器中</p></form></aside></div>
+<section class="notice"><span aria-hidden="true">✦</span><div><h3>让善意，也多一份细心。</h3><p>认领时请核对物品特征，建议在校园公共场所交接。</p></div></section>
+</main><footer><span>寻物小站 · 校园失物招领</span><span>每一条线索，都值得被看见。</span></footer>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-head"><span class="eyebrow">失物详情</span><button type="button" id="close-detail" class="close" aria-label="关闭详情">×</button></div><h2 id="detail-title"></h2><span id="detail-status" class="status"></span><img id="detail-image" alt="发布者上传的物品照片" hidden><dl><dt>丢失地点</dt><dd id="detail-location"></dd><dt>丢失时间</dt><dd id="detail-time"></dd><dt>发布时间</dt><dd id="detail-created"></dd><dt>联系方式</dt><dd><span id="detail-contact"></span> <button type="button" id="reveal-contact" class="text-button">查看联系方式</button></dd></dl><p class="field-note">请先核实物品特征，再与发布者联系。</p></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<script>
+'use strict';
+const STORAGE_KEY = 'campus-lost-found-v1';
+const MAX_IMAGE_BYTES = 500 * 1024;
+const $ = (id) => document.getElementById(id);
+let items = [];
+let storageHealthy = true;
+let imageData = '';
+let imageLoading = false;
+let imageVersion = 0;
+let selectedId = null;
+let toastTimer;
+function notify(message) {
+$('toast').textContent = message;
+$('toast').hidden = false;
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => { $('toast').hidden = true; }, 4000);
+}
+function warn(message) {
+$('storage-warning').textContent = message;
+$('storage-warning').hidden = !message;
+}
+function validImage(value) {
+return typeof value === 'string' && (value === '' ||
+(/^data:image\/(png|jpeg|gif|webp);base64,[A-Za-z0-9+/=]+$/.test(value) &&
+value.length <= Math.ceil(MAX_IMAGE_BYTES / 3) * 4 + 64));
+}
+function isItem(item) {
+return item && typeof item === 'object' && typeof item.id === 'string' &&
+typeof item.title === 'string' && item.title.trim() && item.title.length <= 80 &&
+typeof item.location === 'string' && item.location.trim() && item.location.length <= 100 &&
+typeof item.contact === 'string' && item.contact.trim() && item.contact.length <= 80 &&
+typeof item.time === 'string' && (item.time === '' || !Number.isNaN(Date.parse(item.time))) &&
+item.status === '待认领' && Number.isFinite(item.createdAt) && item.createdAt > 0 &&
+(item.image === undefined || validImage(item.image));
+}
+function readItems() {
+try {
+const raw = localStorage.getItem(STORAGE_KEY);
+const data = raw === null ? [] : JSON.parse(raw);
+if (!Array.isArray(data) || !data.every(isItem) || new Set(data.map(x => x.id)).size !== data.length) {
+throw new Error('invalid data');
+}
+storageHealthy = true;
+warn('');
+return data;
+} catch (error) {
+storageHealthy = false;
+warn('无法读取本地数据，可能是浏览器限制或数据损坏。请检查浏览器设置；为保护原数据，暂不写入。');
+return null;
+}
+}
+function maskContact(contact) {
+if (/^1\d{10}$/.test(contact)) return contact.slice(0, 3) + '****' + contact.slice(-4);
+const chars = Array.from(contact);
+if (chars.length <= 2) return '*'.repeat(chars.length);
+if (chars.length <= 6) return chars[0] + '***' + chars[chars.length - 1];
+return chars.slice(0, 2).join('') + '****' + chars.slice(-2).join('');
+}
+function displayTime(value) {
+if (!value) return '未填写';
+return new Date(value).toLocaleString('zh-CN', { hour12: false });
+}
+function makeElement(tag, className, value) {
+const element = document.createElement(tag);
+if (className) element.className = className;
+if (value !== undefined) element.textContent = value;
+return element;
+}
+function render() {
+const keyword = $('search').value.trim().toLocaleLowerCase();
+const sorted = [...items].sort((a, b) => b.createdAt - a.createdAt || b.id.localeCompare(a.id));
+const filtered = sorted.filter(item => !keyword ||
+item.title.toLocaleLowerCase().includes(keyword) || item.location.toLocaleLowerCase().includes(keyword));
+$('total-count').textContent = String(items.length);
+$('clear-search').hidden = ! $('search').value;
+$('result-count').textContent = keyword ? `找到 ${filtered.length} 条相关信息` : `共 ${items.length} 条信息 · 按发布时间倒序排列`;
+$('items').replaceChildren();
+if (!filtered.length) {
+const empty = makeElement('div', 'empty');
+empty.append(makeElement('div', 'empty-icon', '⌕'),
+makeElement('h3', '', keyword ? '没有找到相关失物信息' : '这里，等待第一条线索'),
+makeElement('p', '', keyword ? '换个物品名称或地点试试看。' : '发布你的失物信息，让校园里的善意找到你。'));
+$('items').append(empty);
+return;
+}
+for (const item of filtered) {
+const card = makeElement('article', 'item');
+let thumb;
+if (item.image) {
+thumb = makeElement('img', 'thumb');
+thumb.src = item.image;
+thumb.alt = '物品照片';
+thumb.loading = 'lazy';
+} else { thumb = makeElement('div', 'thumb placeholder', '⌖'); thumb.setAttribute('aria-hidden', 'true'); }
+const content = makeElement('div');
+content.append(makeElement('h3', '', item.title), makeElement('span', 'status', item.status),
+makeElement('p', 'meta', `丢失地点：${item.location}`),
+makeElement('p', 'meta', `丢失时间：${displayTime(item.time)}`),
+makeElement('p', 'meta', `联系方式：${maskContact(item.contact)}`),
+makeElement('p', 'meta', `发布于 ${displayTime(item.createdAt)}`));
+const detailButton = makeElement('button', 'text-button', '查看详情 ↗');
+detailButton.type = 'button';
+detailButton.setAttribute('aria-label', `查看详情：${item.title}`);
+detailButton.addEventListener('click', () => openDetail(item.id));
+card.append(thumb, content, detailButton);
+$('items').append(card);
+}
+}
+function openDetail(id) {
+const item = items.find(row => row.id === id);
+if (!item) return;
+selectedId = id;
+$('detail-title').textContent = item.title;
+$('detail-location').textContent = item.location;
+$('detail-time').textContent = displayTime(item.time);
+$('detail-created').textContent = displayTime(item.createdAt);
+$('detail-status').textContent = item.status;
+$('detail-contact').textContent = maskContact(item.contact);
+$('reveal-contact').hidden = false;
+$('detail-image').hidden = !item.image;
+if (item.image) $('detail-image').src = item.image;
+else $('detail-image').removeAttribute('src');
+$('detail').showModal();
+}
+$('reveal-contact').addEventListener('click', () => {
+const item = items.find(row => row.id === selectedId);
+if (!item) return;
+$('detail-contact').textContent = item.contact;
+$('reveal-contact').hidden = true;
+});
+$('close-detail').addEventListener('click', () => $('detail').close());
+$('detail').addEventListener('close', () => {
+selectedId = null;
+$('detail-contact').textContent = '';
+});
+$('search').addEventListener('input', render);
+$('clear-search').addEventListener('click', () => { $('search').value = ''; render(); $('search').focus(); });
+function resetImage() {
+imageVersion += 1; // 让已取消的异步读图结果失效。
+imageData = '';
+imageLoading = false;
+$('submit').disabled = false;
+$('image').value = '';
+$('image-preview').removeAttribute('src');
+$('image-preview-wrap').hidden = true;
+}
+$('remove-image').addEventListener('click', resetImage);
+$('image').addEventListener('change', async () => {
+const file = $('image').files[0];
+resetImage();
+if (!file) return;
+if (file.size > MAX_IMAGE_BYTES) { alert('图片不能超过500KB'); return; }
+if (!['image/png', 'image/jpeg', 'image/gif', 'image/webp'].includes(file.type)) {
+alert('请选择 PNG、JPG、GIF 或 WebP 图片'); return;
+}
+const version = imageVersion;
+imageLoading = true;
+$('submit').disabled = true;
+try {
+const data = await new Promise((resolve, reject) => {
+const reader = new FileReader();
+reader.onload = () => resolve(reader.result);
+reader.onerror = () => reject(new Error('读取失败'));
+reader.readAsDataURL(file);
+});
+if (!validImage(data)) throw new Error('图片格式无效');
+await new Promise((resolve, reject) => {
+const probe = new Image();
+probe.onload = resolve;
+probe.onerror = reject;
+probe.src = data;
+});
+if (version !== imageVersion) return;
+imageData = data;
+$('image-preview').src = data;
+$('image-preview-wrap').hidden = false;
+} catch (error) {
+if (version === imageVersion) { resetImage(); alert('图片读取失败，请重新选择有效图片'); }
+} finally {
+if (version === imageVersion) { imageLoading = false; $('submit').disabled = false; }
+}
+});
+$('lost-form').addEventListener('submit', (event) => {
+event.preventDefault();
+const title = $('title').value.trim();
+const location = $('location').value.trim();
+const contact = $('contact').value.trim();
+const time = $('time').value;
+if (!title || !location) {
+alert('请填写物品名称和丢失地点');
+(!title ? $('title') : $('location')).focus();
+return;
+}
+if (!contact) { alert('请填写联系方式'); $('contact').focus(); return; }
+if (!$('lost-form').reportValidity()) return;
+if (time && Number.isNaN(Date.parse(time))) { alert('请选择有效的丢失时间'); return; }
+if (imageLoading) { notify('图片正在读取，请稍候'); return; }
+const latest = readItems();
+if (!storageHealthy || latest === null) { alert('本地存储无法读取，发布未保存，请先检查浏览器设置。'); return; }
+const createdAt = Date.now();
+let id;
+do { id = `${createdAt}-${Math.random().toString(36).slice(2, 11)}`; } while (latest.some(row => row.id === id));
+const item = { id, title, location, time, contact, status: '待认领', createdAt, image: imageData };
+const next = [...latest, item];
+try {
+localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+} catch (error) { alert('保存失败：浏览器存储空间不足或存储被禁用。请移除照片后重试，表单内容已保留。'); return; }
+items = next;
+$('lost-form').reset();
+resetImage();
+$('search').value = '';
+render();
+notify('发布成功！失物信息已保存。');
+});
+window.addEventListener('storage', event => {
+if (event.key !== STORAGE_KEY && event.key !== null) return;
+const latest = readItems();
+if (latest !== null) items = latest;
+if ($('detail').open) $('detail').close();
+render();
+});
+items = readItems() || [];
+render();
+</script>
+</body></html>
